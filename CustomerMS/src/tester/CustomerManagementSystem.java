@@ -1,10 +1,9 @@
 package tester;
 
 import java.util.ArrayList;
-
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
-
 import CustomException.InvalidCustomerException;
 import core.Customer;
 import static Utils.CustomerValidationRules.*;
@@ -57,6 +56,20 @@ public class CustomerManagementSystem {
 					case 5:
 						System.out.println("All customer details");
 						displayAll(customerList);
+						break;
+					case 6:
+						// Sort customer details as per email (use natural ordering)
+						System.out.println("Customer sorted as per email");
+						Collections.sort(customerList);
+						break;
+					case 7:
+						// Sort customer details as per dob n last name (use custom ordering)
+						System.out.println("Customer sorted as per dob n last name");
+						
+						break;
+					case 8:
+						// Remove all those customer details whose subscription is pending for last 6
+						// months?
 						break;
 					case 0:
 						System.out.println("END");

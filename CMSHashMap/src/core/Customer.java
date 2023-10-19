@@ -3,8 +3,8 @@ package core;
 import java.time.LocalDate;
 import java.util.Date;
 
-public class Customer implements Comparable<Customer> {
-	private static int idgenerator = 0;
+public class Customer {
+	private static int idgenerator; //already initializes to zero in heap when object created
 	private int customerId;
 	private String firstName;
 	private String lastName;
@@ -27,9 +27,9 @@ public class Customer implements Comparable<Customer> {
 		this.servicePlan = servicePlan;
 	}
 
-	public Customer(String email) {
-		this.email = email;
-	}
+//	public Customer(String email) {
+//		this.email = email;
+//	}
 
 	@Override
 	public String toString() {
@@ -37,14 +37,18 @@ public class Customer implements Comparable<Customer> {
 				+ ", regAmount=" + regAmount + ", servicePlan=" + servicePlan + "]";
 	}
 
-	public boolean equals(Object o) {
-		if (o instanceof Customer) {
-			Customer cust = (Customer) o;
-			return this.email.equals(cust.email);
-		}
-		return false;
-
-	}
+	
+	// No need to override equals and hashcode since key of map is string and it already implemented both
+//	public boolean equals(Object o) {
+//		if (o instanceof Customer) {
+//			Customer cust = (Customer) o;
+//			return this.email.equals(cust.email);
+//		}
+//		return false;
+//
+//	}
+	
+	
 
 	public static int getIdgenerator() {
 		return idgenerator;
